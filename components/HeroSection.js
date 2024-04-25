@@ -41,7 +41,7 @@ const HeroSection = () => {
             mb={4}
             textTransform="uppercase"
           >
-            L'ÉCOLE DE TALENTS
+            L&apos;ÉCOLE DE TALENTS
           </Heading>
           {/* Services Description */}
           <Text fontSize={{ md: "xl", base: "lg" }} color="red.100" mb={8}>
