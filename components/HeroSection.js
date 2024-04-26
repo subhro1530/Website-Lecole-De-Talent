@@ -1,19 +1,35 @@
 // components/HeroSection.js
 
 import { Box, Image, Flex, Heading, Text, Button } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  // Update scrollOffset state on scroll
+  const handleScroll = () => {
+    const currentScroll = window.pageYOffset;
+    setScrollOffset(currentScroll);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Box
-      bgImage="url('https://waterfrontparkseattle.org/wp-content/uploads/2022/05/AfrobeatDance_DSC04330_KineCamara20220527-1440x810.jpg')"
+      bg="url('https://waterfrontparkseattle.org/wp-content/uploads/2022/05/AfrobeatDance_DSC04330_KineCamara20220527-1440x810.jpg')"
       bgSize="cover"
       bgPosition="center"
-      height={{ base: "100vh", md: "100vh" }} // Adjust height for mobile and desktop
+      height="110vh" // Adjust height for mobile and desktop
       position="relative"
+      overflow="hidden"
+      zIndex={-2}
     >
       {/* Dark overlay */}
       <Box
-        bg="rgba(0, 0, 0, 0.7)" // Darker black overlay with 70% opacity
+        bg="rgba(0, 0, 0, 0.7)"
         height="100%"
         width="100%"
         position="absolute"
@@ -24,6 +40,10 @@ const HeroSection = () => {
         justifyContent="center"
         textAlign="center"
         color="white"
+        transition="opacity 0.5s"
+        style={{
+          transform: `translateY(${scrollOffset * 0.4}px)`,
+        }}
       >
         <Flex direction="column" alignItems="center">
           {/* Headings */}
@@ -41,7 +61,7 @@ const HeroSection = () => {
             mb={4}
             textTransform="uppercase"
           >
-            L&apos;ÉCOLE DE TALENTS
+            L'ÉCOLE DE TALENTS
           </Heading>
           {/* Services Description */}
           <Text fontSize={{ md: "xl", base: "lg" }} color="red.100" mb={8}>
@@ -81,21 +101,25 @@ const HeroSection = () => {
           </Flex>
         </Flex>
       </Box>
+
       {/* Scroll GIF */}
-      <Image
-        width="50px"
-        height="auto"
-        my={5}
-        src="https://socotratrip.com/wp-content/uploads/2022/05/animation_640_l3k1n5d3.gif"
-        alt="Scroll GIF"
-        style={{
-          position: "absolute",
-          bottom: "0",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: "1",
-        }}
-      />
+      {scrollOffset <
+        document.documentElement.scrollHeight - window.innerHeight && (
+        <Image
+          width={{ base: "30px", md: "50px" }} // Adjust image width for mobile and desktop
+          height="auto"
+          my={{ base: "2rem", md: "3rem" }} // Adjust margin vertical for mobile and desktop
+          src="https://socotratrip.com/wp-content/uploads/2022/05/animation_640_l3k1n5d3.gif"
+          alt="Scroll GIF"
+          style={{
+            position: "fixed",
+            bottom: "0",
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: "1",
+          }}
+        />
+      )}
     </Box>
   );
 };
