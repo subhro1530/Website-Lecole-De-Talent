@@ -16,7 +16,13 @@ const Who = () => {
       ml={{ md: "3rem" }}
     >
       {/* Left Section */}
-      <Box flex="1" mr={{ base: 0, md: "2rem" }} display={{base:"flex"}} flexDirection={{base:"column"}} mb={{ base: "2rem", md: 0 }}>
+      <Box
+        flex="1"
+        mr={{ base: 0, md: "2rem" }}
+        display={{ base: "flex" }}
+        flexDirection={{ base: "column" }}
+        mb={{ base: "2rem", md: 0 }}
+      >
         {/* Heading: WHO WE ARE */}
         <Heading
           as="h2"
@@ -37,7 +43,14 @@ const Who = () => {
           lineHeight="105%"
           textAlign={{ base: "center", md: "left" }} // Center text on mobile, left-align on desktop
         >
-          BEST AFRO DANCE <Box color="#C01327">SCHOOL SINCE 2024</Box>
+          BEST AFRO DANCE{" "}
+          <Box
+            fontSize={{ base: "4xl", md: "6xl" }} // Adjust font size for mobile and desktop
+            fontWeight="900"
+            color="#C01327"
+          >
+            SCHOOL SINCE 2024
+          </Box>
         </Text>
         {/* Paragraph */}
         <Text
@@ -45,10 +58,11 @@ const Who = () => {
           mb="1rem"
           textAlign={{ base: "center", md: "left" }} // Center text on mobile, left-align on desktop
         >
-          L&apos;École De Talents has been the leading Afro Dance school since 2024,
-          offering dynamic classes designed to boost skills and creativity. Our
-          mission is to create a vibrant and supportive community for dancers of
-          all levels, empowering them to explore and excel in Afro dance styles.
+          L&apos;École De Talents has been the leading Afro Dance school since
+          2024, offering dynamic classes designed to boost skills and
+          creativity. Our mission is to create a vibrant and supportive
+          community for dancers of all levels, empowering them to explore and
+          excel in Afro dance styles.
         </Text>
         {/* Button: ABOUT US */}
         <Button
@@ -68,7 +82,12 @@ const Who = () => {
       {/* Right Section */}
       <Box flex="1" display="flex" justifyContent="center">
         {/* Image */}
-        <Image src="/image1.png" alt="Image" width={{md:"60%",base:"80%"}} borderRadius="md" />
+        <Image
+          src="/image1.png"
+          alt="Image"
+          width={{ md: "60%", base: "80%" }}
+          borderRadius="md"
+        />
       </Box>
     </Flex>
   );
