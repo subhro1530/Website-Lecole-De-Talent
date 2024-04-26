@@ -9,7 +9,7 @@ const FloatingContainer = () => {
       borderRadius="lg"
       boxShadow="lg"
       p={6}
-      zIndex={5}
+      zIndex={500}
       mx="auto"
       mt={{ base: -8, md: -12 }}
       flexDirection={{ base: "column", md: "row" }}

@@ -27,7 +27,7 @@ const HeroSection = () => {
       height="110vh" // Adjust height for mobile and desktop
       position="relative"
       overflow="hidden"
-      zIndex={-2}
+      zIndex={-1}
     >
       {/* Dark overlay */}
       <Box
@@ -84,6 +84,7 @@ const HeroSection = () => {
               px={10}
               py={6}
               mr={4}
+              zIndex={1}
             >
               Read More
             </Button>
@@ -97,6 +98,7 @@ const HeroSection = () => {
               borderRadius="sm"
               px={10}
               py={6}
+              zIndex={1}
             >
               Contact Us
             </Button>

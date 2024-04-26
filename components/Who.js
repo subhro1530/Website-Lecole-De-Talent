@@ -85,7 +85,7 @@ const Who = () => {
         <Image
           src="/image1.png"
           alt="Image"
-          width={{ md: "60%", base: "80%" }}
+          width={{ md: "70%", base: "80%" }}
           borderRadius="md"
         />
       </Box>
