@@ -45,7 +45,7 @@ const Who = () => {
           mb="1rem"
           textAlign={{ base: "center", md: "left" }} // Center text on mobile, left-align on desktop
         >
-          L'École De Talents has been the leading Afro Dance school since 2024,
+          L&apos;École De Talents has been the leading Afro Dance school since 2024,
           offering dynamic classes designed to boost skills and creativity. Our
           mission is to create a vibrant and supportive community for dancers of
           all levels, empowering them to explore and excel in Afro dance styles.
