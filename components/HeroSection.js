@@ -1,5 +1,3 @@
-// components/HeroSection.js
-
 import { Box, Image, Flex, Heading, Text, Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
@@ -13,9 +11,13 @@ const HeroSection = () => {
   };
 
   useEffect(() => {
+    // Add event listener for scroll when component mounts
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => {
+      // Clean up event listener when component unmounts
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Only run this effect once after initial render
 
   return (
     <Box
@@ -61,7 +63,7 @@ const HeroSection = () => {
             mb={4}
             textTransform="uppercase"
           >
-            L&apos;ÉCOLE DE TALENTS
+            L'ÉCOLE DE TALENTS
           </Heading>
           {/* Services Description */}
           <Text fontSize={{ md: "xl", base: "lg" }} color="red.100" mb={8}>
@@ -103,23 +105,27 @@ const HeroSection = () => {
       </Box>
 
       {/* Scroll GIF */}
-      {scrollOffset <
-        document.documentElement.scrollHeight - window.innerHeight && (
-        <Image
-          width={{ base: "30px", md: "50px" }} // Adjust image width for mobile and desktop
-          height="auto"
-          my={{ base: "2rem", md: "3rem" }} // Adjust margin vertical for mobile and desktop
-          src="https://socotratrip.com/wp-content/uploads/2022/05/animation_640_l3k1n5d3.gif"
-          alt="Scroll GIF"
-          style={{
-            position: "fixed",
-            bottom: "0",
-            left: "50%",
-            transform: "translateX(-50%)",
-            zIndex: "1",
-          }}
-        />
-      )}
+      {/* Render scroll GIF only if there is more content below the viewport */}
+      {typeof window !== "undefined" && // Check if window object is available
+        scrollOffset <
+          (document.documentElement.scrollHeight ||
+            document.body.scrollHeight) -
+            window.innerHeight && (
+          <Image
+            width={{ base: "30px", md: "50px" }} // Adjust image width for mobile and desktop
+            height="auto"
+            my={{ base: "2rem", md: "3rem" }} // Adjust margin vertical for mobile and desktop
+            src="https://socotratrip.com/wp-content/uploads/2022/05/animation_640_l3k1n5d3.gif"
+            alt="Scroll GIF"
+            style={{
+              position: "fixed",
+              bottom: "0",
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: "1",
+            }}
+          />
+        )}
     </Box>
   );
 };
