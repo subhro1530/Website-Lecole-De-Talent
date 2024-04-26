@@ -106,26 +106,22 @@ const HeroSection = () => {
 
       {/* Scroll GIF */}
       {/* Render scroll GIF only if there is more content below the viewport */}
-      {typeof window !== "undefined" && // Check if window object is available
-        scrollOffset <
-          (document.documentElement.scrollHeight ||
-            document.body.scrollHeight) -
-            window.innerHeight && (
-          <Image
-            width={{ base: "30px", md: "50px" }} // Adjust image width for mobile and desktop
-            height="auto"
-            my={{ base: "2rem", md: "3rem" }} // Adjust margin vertical for mobile and desktop
-            src="https://socotratrip.com/wp-content/uploads/2022/05/animation_640_l3k1n5d3.gif"
-            alt="Scroll GIF"
-            style={{
-              position: "fixed",
-              bottom: "0",
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: "1",
-            }}
-          />
-        )}
+      {scrollOffset < 500 && ( // Change 500 to the scroll offset at which you want to show the GIF
+        <Image
+          width={{ base: "30px", md: "50px" }} // Adjust image width for mobile and desktop
+          height="auto"
+          my={{ base: "2rem", md: "3rem" }} // Adjust margin vertical for mobile and desktop
+          src="https://socotratrip.com/wp-content/uploads/2022/05/animation_640_l3k1n5d3.gif"
+          alt="Scroll GIF"
+          style={{
+            position: "fixed",
+            bottom: "0",
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: "1",
+          }}
+        />
+      )}
     </Box>
   );
 };
