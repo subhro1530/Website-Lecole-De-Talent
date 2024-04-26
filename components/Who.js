@@ -13,7 +13,6 @@ const Who = () => {
       width="100%" // Take up entire width
       borderRadius="md"
       mb="2rem"
-      ml={{ md: "3rem" }}
     >
       {/* Left Section */}
       <Box
@@ -22,6 +21,7 @@ const Who = () => {
         display={{ base: "flex" }}
         flexDirection={{ base: "column" }}
         mb={{ base: "2rem", md: 0 }}
+        ml={{ md: "80px" }}
       >
         {/* Heading: WHO WE ARE */}
         <Heading

@@ -18,15 +18,16 @@ const Navbar = () => {
       justify="space-between"
       wrap="wrap"
       padding="1.5rem"
-      backgroundColor={{ base: "rgba(0, 0, 0, 0.8)", md: "transparent" }} // Transparent in desktop, translucent in mobile
+      backgroundColor="rgba(0, 0, 0, 0.6)" // Transparent in desktop, translucent in mobile
       color="white"
       position="fixed"
       top="-5"
       left="0"
       right="0"
       zIndex="999"
-      width="100%"
-      // boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" // Optional: Add a subtle box shadow
+      overflowX="hidden"
+      maxWidth="100vw"
+      boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" // Optional: Add a subtle box shadow
     >
       {/* Left side - Logo */}
       <Flex align="center" mr={5}>
