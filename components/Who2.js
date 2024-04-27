@@ -57,7 +57,7 @@ const Who2 = () => {
           mb="1rem"
           textAlign={{ base: "center", md: "left" }} // Center text on mobile, left-align on desktop
         >
-          L'école De Talents has been a leading brand in teaching Afro dance
+          L&apos;école De Talents has been a leading brand in teaching Afro dance
           since 2024, offering top-notch classes designed to uplift skills and
           creativity. Our dedication is to foster a welcoming and inspiring
           community for dancers of all levels, empowering them to thrive in Afro

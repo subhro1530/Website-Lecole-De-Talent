@@ -10,15 +10,15 @@ const Testimonial = () => {
       mb="2rem"
       justifyContent="center" // Center horizontally
       alignItems="center" // Center vertically
-    //   textAlign="center" // Center text
+      //   textAlign="center" // Center text
     >
       {/* Image Section */}
       <Box flex="1" maxWidth="100%" mb={{ base: "2rem", md: 0 }}>
         <Image
           src="https://templatekit.tokomoo.com/dancekit/wp-content/uploads/sites/44/2021/11/modern-male-dancer-portrait.jpg"
           alt="Client Image"
-                  borderRadius="md"
-                  boxSize="450px"
+          borderRadius="md"
+          boxSize="450px"
           objectFit="cover"
         />
       </Box>
@@ -48,10 +48,10 @@ const Testimonial = () => {
         </Heading>
 
         {/* Testimonial Quote */}
-        <Text fontSize={{ base: "sm", md: "lg" }} mb="1rem"  textAlign="justify">
+        <Text fontSize={{ base: "sm", md: "lg" }} mb="1rem" textAlign="justify">
           “I would like to personally thank you for your outstanding dance
-          course. It fits our needs perfectly. <br />Modern dance saved my business.
-          Dude, your stuff is the bomb!”
+          course. It fits our needs perfectly. <br />
+          Modern dance saved my business. Dude, your stuff is the bomb!”
         </Text>
 
         {/* Client Details */}
